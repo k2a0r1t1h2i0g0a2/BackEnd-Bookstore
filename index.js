@@ -24,5 +24,8 @@ app.use("/api/book",isAuthenticated,bookRouter)
 app.use("/api/cart", isAuthenticated, cartRouter)
 app.use ("/api/payment",isAuthenticated,paymentRouter)
 
-app.listen(port, () =>
-{ console.log("App is listening with port", port) })
+app.listen(port, () => { console.log("App is listening with port", port) });
+
+app.get("/", function (req, res) {
+    res.send("Welcome to Book Store 😻🥳🤩");
+})
